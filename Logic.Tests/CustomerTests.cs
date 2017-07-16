@@ -49,14 +49,6 @@ namespace Logic.Tests
         #endregion
 
 
-        [Test]
-        [Category("ToString tests")]
-        [Ignore("")]
-        public void CustomToString_AllOk_FormatedString()
-        {
-            Assert.AreEqual("Name: Jeffrey Richter, Revenue: 1,000,000.00, Phone: +1 (425) 555-0100", customer.ToString("A", new CustomProvider()));
-        }
-
         #region Exceptions tests
 
         [TestCase("QW")]
@@ -70,6 +62,17 @@ namespace Logic.Tests
         }
 
         #endregion
+
+        
+        //[TestCase("G", ExpectedResult = "Name: Jeffrey Richter, Revenue: 1,000,000.00, Phone: +1 (425) 555-0100")]
+        [TestCase("NP", ExpectedResult = "Name: Jeffrey Richter, Phone: +1 (425) 555-0100")]
+        [TestCase("np", ExpectedResult = "Name: Jeffrey Richter, Phone: +1 (425) 555-0100")]
+        [TestCase("P", ExpectedResult = "Phone: +1 (425) 555-0100")]
+        [Category("ToString tests")]
+        public string CustomProviderToString_AllOk_FormatedString(string format)
+        {
+            return customer.ToString(format,new CustomProvider());
+        }
 
     }
 }

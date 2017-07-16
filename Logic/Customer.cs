@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -107,27 +108,27 @@ namespace Logic
 
         private string GenerateStringByFormat(string format, IFormatProvider formatProvider)
         {
-            var str = new StringBuilder();
+            string str = string.Empty;
 
             for (int i = 0; i < format.Length; i++)
             {
                 switch (char.ToUpper(format[i]))
                 {
                     case 'N':
-                        str.AppendFormat(formatProvider, "{0}", Name);
+                        str+= string.Format(formatProvider,"{0:N}",Name);
                         break;
                     case 'P':
-                        str.AppendFormat(formatProvider, "{0}", ContactPhone);
+                        str+=string.Format(formatProvider,"{0:P}",ContactPhone);
                         break;
                     case 'R':
-                        str.AppendFormat(formatProvider, "{0:###,###.00}", Revenue);
+                        str+=string.Format(formatProvider,"{0:R}",Revenue.ToString("###,###.00"));
                         break;
                 }
                 if (i != format.Length - 1)
-                    str.Append(", ");
+                    str+=", ";
             }
 
-            return str.ToString();
+            return str;
         }
 
         #endregion

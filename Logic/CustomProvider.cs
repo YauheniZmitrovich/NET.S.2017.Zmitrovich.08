@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    /*public class CustomProvider : IFormatProvider, ICustomFormatter
+    public class CustomProvider : IFormatProvider, ICustomFormatter
     {
         private readonly IFormatProvider _parent;
 
-        public CustomProvider() : this(CultureInfo.CurrentCulture) {}
+        public CustomProvider() : this(CultureInfo.CurrentCulture) { }
 
         public CustomProvider(IFormatProvider parent)
         {
@@ -23,14 +23,33 @@ namespace Logic
             return (formatType == typeof(ICustomFormatter)) ? this : null;
         }
 
-        public string Format(string format, object arg, IFormatProvider prov)
+        public string Format(string format, object arg, IFormatProvider formatProvider)
         {
-            Customer customer = arg as Customer;
+            if (arg==null)
+                throw  new ArgumentNullException();
 
-            if (customer == null || format != "A")
-                return string.Format(_parent, format, customer);
 
-            return $"Name: {customer.Name}, Phone number: {customer.ContactPhone}, Revenue: {customer.Revenue}.";
-        }*/
+            string str = string.Empty;
+
+            for (int i = 0; i < format.Length; i++)
+            {
+                switch (char.ToUpper(format[i]))
+                {
+                    case 'N':
+                        str+= $"Name: {arg.ToString()}";
+                        break;
+                    case 'P':
+                        str += $"Phone: {arg.ToString()}";
+                        break;
+                    case 'R':
+                        str += $"Revenue: {arg.ToString()}";
+                        break;
+                }
+                if (i != format.Length - 1)
+                    str+=", ";
+            }
+
+            return str;
+        }
     }
 }
