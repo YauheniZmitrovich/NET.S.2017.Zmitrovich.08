@@ -29,7 +29,6 @@ namespace Logic
 
         #endregion
 
-
         #region Constructors
 
         /// <summary>
@@ -46,7 +45,6 @@ namespace Logic
         }
 
         #endregion
-
 
         #region ToString methods
 
@@ -102,7 +100,6 @@ namespace Logic
         }
 
         #endregion
-
 
         #region  Private
 

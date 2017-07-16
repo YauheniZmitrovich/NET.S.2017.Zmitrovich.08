@@ -18,7 +18,6 @@ namespace Logic.Tests
 
         #endregion
 
-
         #region IFormattable implementation ToString method tests
 
         [TestCase("G", ExpectedResult = "Jeffrey Richter, 1,000,000.00, +1 (425) 555-0100")]
@@ -36,7 +35,6 @@ namespace Logic.Tests
 
         #endregion
 
-
         #region Object's ToString tests
 
         [Test]
@@ -47,7 +45,6 @@ namespace Logic.Tests
         }
 
         #endregion
-
 
         #region Exceptions tests
 
@@ -62,7 +59,6 @@ namespace Logic.Tests
         }
 
         #endregion
-
 
         #region Custom providers tests
 

@@ -15,7 +15,6 @@ namespace Logic
 
         #endregion
 
-
         #region Constructors
 
         /// <summary>
@@ -32,7 +31,6 @@ namespace Logic
         }
 
         #endregion
-
 
         #region Interfaces implementations
 
