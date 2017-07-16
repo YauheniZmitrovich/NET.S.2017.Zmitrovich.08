@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class CustomProvider : IFormatProvider, ICustomFormatter
+    /*public class CustomProvider : IFormatProvider, ICustomFormatter
     {
         private readonly IFormatProvider _parent;
 
@@ -31,6 +31,6 @@ namespace Logic
                 return string.Format(_parent, format, customer);
 
             return $"Name: {customer.Name}, Phone number: {customer.ContactPhone}, Revenue: {customer.Revenue}.";
-        }
+        }*/
     }
 }
