@@ -81,20 +81,27 @@ namespace Logic
             if (formatProvider == null)
                 formatProvider = CultureInfo.CurrentCulture;
 
-            if (format.Length > 2)
+            if (format.Length > 3)
                 throw new ArgumentException();
 
-            foreach (char c in format)
+            if (formatProvider == CultureInfo.CurrentCulture)
             {
-                if ("NPRnpr".IndexOf(c) == -1)
-                    throw new ArgumentException();
+                string allowChar = "NPRnpr";
+
+                foreach (char c in format)
+                {
+                    int index = allowChar.IndexOf(c);
+                    if (index == -1)
+                        throw new ArgumentException();
+                    allowChar = allowChar.Remove(index, 1); //Symbols can not be repeated.
+                }
             }
-      
+
             return GenerateStringByFormat(format, formatProvider);
         }
 
         #endregion
-        
+
 
         #region  Private
 
