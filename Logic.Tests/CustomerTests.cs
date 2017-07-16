@@ -63,16 +63,19 @@ namespace Logic.Tests
 
         #endregion
 
-        
-        //[TestCase("G", ExpectedResult = "Name: Jeffrey Richter, Revenue: 1,000,000.00, Phone: +1 (425) 555-0100")]
+
+        #region Custom providers tests
+
+        [TestCase(null, ExpectedResult = "Jeffrey Richter, 1,000,000.00, +1 (425) 555-0100")]
         [TestCase("NP", ExpectedResult = "Name: Jeffrey Richter, Phone: +1 (425) 555-0100")]
         [TestCase("np", ExpectedResult = "Name: Jeffrey Richter, Phone: +1 (425) 555-0100")]
-        [TestCase("P", ExpectedResult = "Phone: +1 (425) 555-0100")]
+        [TestCase("R", ExpectedResult = "Revenue: 1,000,000.00")]
         [Category("ToString tests")]
         public string CustomProviderToString_AllOk_FormatedString(string format)
         {
-            return customer.ToString(format,new CustomProvider());
+            return customer.ToString(format, new CustomProvider());
         }
 
+        #endregion
     }
 }

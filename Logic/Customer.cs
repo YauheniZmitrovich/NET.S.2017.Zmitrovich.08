@@ -81,8 +81,8 @@ namespace Logic
 
             if (formatProvider == null)
                 formatProvider = CultureInfo.CurrentCulture;
-
-            if (format.Length > 3)
+ 
+                    if (format.Length > 3)
                 throw new ArgumentException();
 
             if (formatProvider == CultureInfo.CurrentCulture)
@@ -115,17 +115,17 @@ namespace Logic
                 switch (char.ToUpper(format[i]))
                 {
                     case 'N':
-                        str+= string.Format(formatProvider,"{0:N}",Name);
+                        str += string.Format(formatProvider, "{0:N}", Name);
                         break;
                     case 'P':
-                        str+=string.Format(formatProvider,"{0:P}",ContactPhone);
+                        str += string.Format(formatProvider, "{0:P}", ContactPhone);
                         break;
                     case 'R':
-                        str+=string.Format(formatProvider,"{0:R}",Revenue.ToString("###,###.00"));
+                        str += string.Format(formatProvider, "{0:R}", Revenue.ToString("###,###.00"));
                         break;
                 }
                 if (i != format.Length - 1)
-                    str+=", ";
+                    str += ", ";
             }
 
             return str;
