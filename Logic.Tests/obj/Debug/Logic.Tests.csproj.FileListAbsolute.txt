@@ -1,0 +1,9 @@
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\Logic.Tests.dll
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\Logic.Tests.pdb
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\Logic.dll
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\nunit.framework.dll
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\Logic.pdb
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\bin\Debug\nunit.framework.xml
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\obj\Debug\Logic.Tests.csprojResolveAssemblyReference.cache
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\obj\Debug\Logic.Tests.dll
+E:\EPAM\NET.S.2017.Zmitrovich.08\Logic.Tests\obj\Debug\Logic.Tests.pdb
