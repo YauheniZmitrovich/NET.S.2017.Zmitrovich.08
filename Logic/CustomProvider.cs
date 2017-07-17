@@ -69,7 +69,7 @@ namespace Logic
 
             if (format == null)
             {
-                return arg.ToString();
+                return string.Format(_parent, "{0:" + format + "}", arg);
             }
 
             string str = string.Empty;
